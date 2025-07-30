@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community Weekly Activities</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('https://images.unsplash.com/photo-1506765515384-028b60a970df');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      color: #003d33;
+    }
+
+    header {
+      background-color: #00695c;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    nav {
+      background-color: #00796b;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      padding: 10px 20px;
+      margin: 5px;
+      background-color: #009688;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #004d40;
+    }
+
+    .activities {
+      background-color: rgba(255, 255, 255, 0.9);
+      margin: 30px auto;
+      padding: 30px;
+      max-width: 900px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      color: #00695c;
+    }
+
+    .week-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .week-list li {
+      background-color: #e0f2f1;
+      margin-bottom: 10px;
+      padding: 15px;
+      border-left: 5px solid #00796b;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border-radius: 4px;
+    }
+
+    .week-list li:hover {
+      background-color: #b2dfdb;
+    }
+
+    .details {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #ffffff;
+      border-left: 3px solid #004d40;
+      display: none;
+      border-radius: 4px;
+    }
+
+    footer {
+      background-color: #004d40;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Community Weekly Activities</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="activities.html">ACTIVITIES</a>
+    <a href="gallery.html">GALLERY</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+
+  <main>
+    <section class="activities">
+      <h2>Weekly Activities (Click a week to see details)</h2>
+      <ul class="week-list">
+        <li data-detail="Visited Srinivas Nagar to inspect drainage systems.">
+          Week 1: Srinivas Nagar Drainage Visit
+          <div class="details"></div>
+        </li>
+        <li data-detail="Visited Bangala Thota area for field observation.">
+          Week 2: Bangala Thota Area Visit
+          <div class="details"></div>
+        </li>
+        <li data-detail="Revisited Bangala Thota area to give suggestions and discuss with locals.">
+          Week 3: Suggestions at Bangala Thota
+          <div class="details"></div>
+        </li>
+        <li data-detail="Conducted water quality tests in the affected areas.">
+          Week 4: Water Quality Tests
+          <div class="details"></div>
+        </li>
+        <li data-detail="Visited Sachivalayam and Settygunta Road areas to evaluate infrastructure.">
+          Week 5: Sachivalayam & Settygunta Road Visit
+          <div class="details"></div>
+        </li>
+        <li data-detail="Prepared pamphlets for public awareness about water pollution.">
+          Week 6: Pamphlet Preparation
+          <div class="details"></div>
+        </li>
+        <li data-detail="Collected further information from Settygunta Road area residents.">
+          Week 7: Settygunta Road Info Collection
+          <div class="details"></div>
+        </li>
+        <li data-detail="Created and launched this website to showcase our work and spread awareness.">
+          Week 8: Website Creation
+          <div class="details"></div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+     2025 IMPACTS OF WATER POLLUTION TEAM</footer>
+
+  <script>
+    const weekItems = document.querySelectorAll('.week-list li');
+
+    weekItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const detailDiv = item.querySelector('.details');
+        const isVisible = detailDiv.style.display === 'block';
+
+        // Hide all other detail boxes
+        document.querySelectorAll('.details').forEach(div => {
+          div.style.display = 'none';
+          div.textContent = '';
+        });
+
+        // Toggle this one
+        if (!isVisible) {
+          detailDiv.textContent = item.getAttribute('data-detail');
+          detailDiv.style.display = 'block';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
